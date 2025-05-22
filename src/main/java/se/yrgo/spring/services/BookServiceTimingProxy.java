@@ -57,4 +57,15 @@ public class BookServiceTimingProxy implements BookService {
         long timeTaken = end - start;
         System.out.println("Took this long: " + timeTaken);
     }
+
+    @Override
+    public void deleteBookFromStock(Book removeBook) {
+       long start = System.currentTimeMillis();
+
+        originalBookService.registerNewBook(removeBook);
+
+        long end = System.currentTimeMillis();
+        long timeTaken = end - start;
+        System.out.println("Took this long: " + timeTaken);
+    }
 }

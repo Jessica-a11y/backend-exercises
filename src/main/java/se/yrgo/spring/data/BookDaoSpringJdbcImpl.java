@@ -14,7 +14,7 @@ public class BookDaoSpringJdbcImpl implements BookDao{
 
     private static final String INSERT_BOOK_SQL = "INSERT INTO BOOK (ISBN,TITLE, AUTHOR, PRICE) values (?, ?, ?, ?)";
     private static final String ALL_BOOKS_SQL = "SELECT * FROM BOOK";
-    private static final String BOOKS_BY_AUTHOR_SQL = "SELECT * FROM BOOK THERE AUTHOR = ?";
+    private static final String BOOKS_BY_AUTHOR_SQL = "SELECT * FROM BOOK WHERE AUTHOR = ?";
     private static final String FIND_BY_ISBN_SQL = "SELECT * FROM BOOK WHERE ISBN = ?";
     private static final String REMOVE_BOOK_SQL = "DELETE FROM BOOK WHERE ISBN = ?";
     private static final String CREATE_TABLE_SQL = "CREATE TABLE BOOK (ISBN VARCHAR(20), TITLE VARCHAR(60), AUTHOR VARCHAR(100), PRICE DOUBLE)";

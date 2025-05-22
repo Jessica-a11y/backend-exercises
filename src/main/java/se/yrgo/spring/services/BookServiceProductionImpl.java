@@ -2,10 +2,13 @@ package se.yrgo.spring.services;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import se.yrgo.spring.data.BookDao;
 import se.yrgo.spring.data.BookNotFoundException;
 import se.yrgo.spring.domain.Book;
 
+@Transactional
 public class BookServiceProductionImpl implements BookService{
     private BookDao dao;
 
@@ -31,12 +34,17 @@ public class BookServiceProductionImpl implements BookService{
 
     @Override
     public List<Book> getEntireCatalogue() {
-        return dao.allBooks();
+        return dao.allBooks(); 
     }
 
     @Override
     public void registerNewBook(Book newBook) {
         dao.create(newBook);
+    }
+
+    @Override
+    public void deleteBookFromStock(Book removeBook) {
+        dao.delete(removeBook);
     }
     
 }
