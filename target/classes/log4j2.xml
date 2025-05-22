@@ -6,7 +6,7 @@
     </Console>
   </Appenders>
    <Loggers>
-        <Logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager" level="DEBUG"/>
+        <Logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager" level="WARN"/>
         <!-- <Logger name="org.springframework.orm.hibernate3.HibernateTransactionManager" level="DEBUG"/>  --> 
         <!--  <Logger name="org.springframework.orm.jpa.JpaTransactionManager" level="DEBUG"/>  -->
         <Root level="fatal">

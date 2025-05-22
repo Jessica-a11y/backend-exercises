@@ -1,6 +1,6 @@
 package se.yrgo.spring.client;
 
-import java.util.List;
+
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

@@ -1,19 +1,19 @@
 package se.yrgo.spring.services;
 
-import javax.security.auth.login.CredentialNotFoundException;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
-
 import se.yrgo.spring.data.BookNotFoundException;
 import se.yrgo.spring.data.CustomerCreditExceededException;
 import se.yrgo.spring.domain.*;
 
 @Transactional
+@Component("purchasingService")
 public class PurchasingServiceImpl implements PurchasingService{
     private BookService books;
     private AccountsService accounts;
 
+    @Autowired
     public PurchasingServiceImpl(BookService books, AccountsService accounts){
         this.books = books;
         this.accounts = accounts;

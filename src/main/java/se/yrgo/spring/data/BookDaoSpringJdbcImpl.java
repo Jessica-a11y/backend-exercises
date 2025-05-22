@@ -4,11 +4,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.*;
+import org.springframework.stereotype.Component;
 
 import se.yrgo.spring.domain.Book;
 
+@Component("bookDao")
 public class BookDaoSpringJdbcImpl implements BookDao{
     private JdbcTemplate jdbcTemplate;
 
@@ -19,10 +24,12 @@ public class BookDaoSpringJdbcImpl implements BookDao{
     private static final String REMOVE_BOOK_SQL = "DELETE FROM BOOK WHERE ISBN = ?";
     private static final String CREATE_TABLE_SQL = "CREATE TABLE BOOK (ISBN VARCHAR(20), TITLE VARCHAR(60), AUTHOR VARCHAR(100), PRICE DOUBLE)";
 
+    @Autowired
     public BookDaoSpringJdbcImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @PostConstruct
     private void createTables() {
 		try {
 			jdbcTemplate.update(CREATE_TABLE_SQL);
