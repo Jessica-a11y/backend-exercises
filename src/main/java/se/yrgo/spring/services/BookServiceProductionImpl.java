@@ -2,14 +2,14 @@ package se.yrgo.spring.services;
 
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.*;
 import org.springframework.transaction.annotation.Transactional;
 
 import se.yrgo.spring.data.BookDao;
 import se.yrgo.spring.data.BookNotFoundException;
 import se.yrgo.spring.domain.Book;
 
-@Component("bookService")
+@Service("bookService")
 @Transactional
 public class BookServiceProductionImpl implements BookService{
     private BookDao dao;

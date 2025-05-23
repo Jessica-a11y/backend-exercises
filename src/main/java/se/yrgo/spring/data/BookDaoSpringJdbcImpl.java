@@ -9,11 +9,11 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.*;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.*;
 
 import se.yrgo.spring.domain.Book;
 
-@Component("bookDao")
+
 public class BookDaoSpringJdbcImpl implements BookDao{
     private JdbcTemplate jdbcTemplate;
 

@@ -1,6 +1,15 @@
 package se.yrgo.spring.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 	private String isbn;
 	private String title;
 	private String author;
@@ -13,8 +22,14 @@ public class Book {
 		this.price = price;
 	}
 
+	public Book() {}
+
 	public String toString(){
 		return this.title + " by " + this.author;
+	}
+
+	public int getId() {
+		return this.id;
 	}
 
 	public String getIsbn() {
